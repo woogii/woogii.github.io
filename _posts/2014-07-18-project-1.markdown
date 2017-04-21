@@ -2,11 +2,11 @@
 layout: default
 modal-id: 1
 date: 2014-07-18
-img: cabin.png
+img: HAM.png
 alt: image-alt
 project-date: April 2014
 client: Start Bootstrap
 category: Web Development
-description: Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+description: I attended [Udacity's iOS Nanodegree Course](https://www.udacity.com/course/ios-developer-nanodegree--nd003) to learn programming iOS, which is known for providing high quality vocational programs=. While attending the course, I was able to learn basic iOS programming techniques, such as Autolayout, Swift programming syntax, UIKit and Core Data, etc. In order to pass the course, I had to create a portfolio of five apps based on what I had learned. Among them, four apps are related to course contents and the other app, which is a final capstone project, is solely developed by myself. One of the best parts of the course is that my source code was fully reviewed by experts via Github account. I was able to get valuable advices about design decisions, programming style, and debugging. I think this course laid a good foundation for me to become a iOS developer.
 
 ---
