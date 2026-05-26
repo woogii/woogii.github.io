@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siwook Hyun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-soft: #4a4a45;
+    --ink-faint: #8a8a82;
+    --line: #e4e2dc;
+    --paper: #fbfaf7;
+    --accent: #7a4a2b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 88px 32px 120px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    margin-bottom: 64px;
+    opacity: 0;
+    animation: rise 0.9s ease forwards;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    letter-spacing: -0.02em;
+    line-height: 1.0;
+    margin-bottom: 18px;
+  }
+
+  .role {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-bottom: 22px;
+  }
+
+  .contact {
+    font-family: 'Fraunces', serif;
+    font-size: 0.92rem;
+    letter-spacing: 0.01em;
+  }
+
+  .contact a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: border-color 0.25s ease, color 0.25s ease;
+  }
+
+  .contact a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .contact .sep {
+    color: var(--ink-faint);
+    margin: 0 12px;
+  }
+
+  /* ---------- Intro ---------- */
+  .intro {
+    font-size: 1.18rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 72px;
+    opacity: 0;
+    animation: rise 0.9s ease 0.12s forwards;
+  }
+
+  .intro strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ---------- Sections ---------- */
+  section {
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: rise 0.9s ease forwards;
+  }
+  section:nth-of-type(1) { animation-delay: 0.24s; }
+  section:nth-of-type(2) { animation-delay: 0.32s; }
+  section:nth-of-type(3) { animation-delay: 0.40s; }
+  section:nth-of-type(4) { animation-delay: 0.48s; }
+  section:nth-of-type(5) { animation-delay: 0.56s; }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* ---------- Entries ---------- */
+  .entry { margin-bottom: 34px; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 4px;
+  }
+
+  .entry-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.12rem;
+    letter-spacing: -0.01em;
+  }
+
+  .entry-date {
+    font-family: 'Fraunces', serif;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .entry-sub {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  ul.points {
+    list-style: none;
+  }
+
+  ul.points li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 9px;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+
+  ul.points li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.62em;
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  /* ---------- Skills / simple rows ---------- */
+  .row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 16px;
+    margin-bottom: 14px;
+    align-items: baseline;
+  }
+  .row:last-child { margin-bottom: 0; }
+
+  .row-label {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+
+  .row-val {
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-family: 'Fraunces', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+    text-align: center;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    header, .intro, section { animation: none; opacity: 1; }
+  }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 56px 24px 80px; }
+    body { font-size: 17px; }
+    .entry-head { flex-direction: column; gap: 2px; }
+    .row { grid-template-columns: 1fr; gap: 2px; margin-bottom: 18px; }
+    .contact .sep { display: inline; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Siwook Hyun</h1>
+    <div class="role">Information Systems Officer &middot; Public Sector</div>
+    <div class="contact">
+      <a href="mailto:siwookhyun@gmail.com">siwookhyun@gmail.com</a>
+      <span class="sep">/</span>
+      <a href="https://github.com/woogii" target="_blank" rel="noopener">github.com/woogii</a>
+    </div>
+  </header>
+
+  <p class="intro">
+    <strong>Information Systems Officer with 8 years of experience</strong> in planning and
+    managing IT projects in the public sector. Proven track record of managing complex
+    procurement processes and adept at communicating with stakeholders to lead IT projects
+    to completion. Aspiring to pursue Syracuse University&rsquo;s EMPA program with a Certificate
+    of Advanced Study in Data Analytics to establish data-driven decision-making upon
+    returning to my organization.
+  </p>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Jeju Provincial Government, South Korea</span>
+        <span class="entry-date">2018 &ndash; Present</span>
+      </div>
+      <div class="entry-sub">Information Systems Officer (Civil Servant)</div>
+      <ul class="points">
+        <li>Manage contract processes, budget allocation, and execution of IT projects.</li>
+        <li>Work with multiple divisions, contractors, and partner agencies, facilitating communication among stakeholders to deliver IT projects effectively.</li>
+        <li>Oversee the project to construct the underground utility database (approx. USD 600K budget; 80 km of utilities) and develop a master plan to improve its accuracy in location and depth to enhance public safety.</li>
+        <li>Maintain and improve the spatial information system to support urban planning and public infrastructure management.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Slogup</span>
+        <span class="entry-date">2016 &ndash; 2017</span>
+      </div>
+      <div class="entry-sub">iOS Developer</div>
+      <ul class="points">
+        <li>Participated as the main developer in outsourced iOS application projects written in Swift.</li>
+        <li>Enhanced application features and responded to business requirements to maintain polished iOS apps.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Shinyoung Securities Co., Ltd.</span>
+        <span class="entry-date">2010 &ndash; 2013</span>
+      </div>
+      <div class="entry-sub">Software Engineer</div>
+      <ul class="points">
+        <li>Analyzed front-office requirements and improved fund-trading systems.</li>
+        <li>Provided data support for marketing and customer management.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">KDI School of Public Policy and Management</span>
+        <span class="entry-date">2026 &ndash; Present</span>
+      </div>
+      <div class="entry-sub">Master of Data Science for Public Policy and Management</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Kyung Hee University</span>
+        <span class="entry-date">2009</span>
+      </div>
+      <div class="entry-sub">B.E. in Computer Science and Engineering</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="row">
+      <div class="row-label">Core Competencies</div>
+      <div class="row-val">IT Project Management &middot; IT Procurement &amp; Contract Management &middot; Public Data Management</div>
+    </div>
+    <div class="row">
+      <div class="row-label">Technical</div>
+      <div class="row-val">Python &middot; Swift &middot; C &middot; C++ &middot; R &middot; SQL</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <div class="row">
+      <div class="row-label">Korean</div>
+      <div class="row-val">Native</div>
+    </div>
+    <div class="row">
+      <div class="row-label">English</div>
+      <div class="row-val">Full Professional Proficiency</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Military Service</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Sergeant, 8th U.S. Army</span>
+        <span class="entry-date">2004 &ndash; 2006</span>
+      </div>
+      <ul class="points">
+        <li>Served as a Korean Augmentee to the United States Army (KATUSA).</li>
+        <li>Honorably discharged as Sergeant; awarded the Army Commendation Medal.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Siwook Hyun &middot; Jeju, Republic of Korea
+  </footer>
+
+</div>
+</body>
+</html>
